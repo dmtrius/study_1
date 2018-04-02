@@ -6,6 +6,7 @@ import net.bytebuddy.implementation.MethodDelegation;
 import static net.bytebuddy.matcher.ElementMatchers.named;
 
 public class ByteBuddyProxy {
+
     public static void main(String... args) throws IllegalAccessException, InstantiationException {
         User user = new User("Вася");
 
