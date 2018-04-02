@@ -1,8 +1,9 @@
 package pl.dmt.trieSearchTree;
 
 public class Main {
-    public static void main(String[] args) {
-        final Trie trie = new Trie();
+
+    public static void main(String... args) {
+        final TrieI trie = new Trie();
         trie.insert("capacity");
         trie.insert("java");
         trie.insert("cpp");
@@ -11,6 +12,7 @@ public class Main {
         trie.insert("ship");
 
         System.out.println(trie.search("ship"));
+        System.out.println(trie.startsWith("d"));
 
         System.out.println(trie);
     }
@@ -25,7 +27,7 @@ interface TrieI {
 class Trie implements TrieI {
     private final TrieNode root;
 
-    public Trie() {
+    Trie() {
         root = new TrieNode();
     }
 
@@ -54,11 +56,9 @@ class Trie implements TrieI {
         if (p == null) {
             return false;
         } else {
-            if (p.isEnd)
-                return true;
+            return p.isEnd;
         }
 
-        return false;
     }
 
     // Returns if there is any word in the trie
