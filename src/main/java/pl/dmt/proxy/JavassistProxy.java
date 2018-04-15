@@ -5,6 +5,7 @@ import javassist.util.proxy.ProxyFactory;
 import javassist.util.proxy.ProxyObject;
 
 public class JavassistProxy {
+
     public static void main(String... args) throws IllegalAccessException, InstantiationException {
         User user = new User("Вася");
 

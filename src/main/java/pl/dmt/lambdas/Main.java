@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args) {
+
+    public static void main(String... args) throws Throwable {
 
         /*Arrays.asList("http://localhost/", "https://github.com")
                 .stream()
@@ -39,7 +40,6 @@ public class Main {
     @FunctionalInterface
     interface SilentInvoker {
         MethodType SIGNATURE = MethodType.methodType(Object.class, Callable.class);
-
         <V> V invoke(final Callable<V> callable);
     }
 }

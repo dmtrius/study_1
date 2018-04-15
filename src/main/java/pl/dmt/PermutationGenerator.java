@@ -71,7 +71,7 @@ public class PermutationGenerator {
 
     // For testing of the PermutationGenerator class
     public static void main(String[] args) {
-        PermutationGenerator pg = new PermutationGenerator(3, 1);
+        PermutationGenerator pg = new PermutationGenerator(4, 1);
 
         while (pg.hasMore()) {
             int[] temp = pg.getNext();

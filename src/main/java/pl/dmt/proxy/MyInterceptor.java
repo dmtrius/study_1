@@ -1,9 +1,9 @@
 package pl.dmt.proxy;
 
 public class MyInterceptor {
-    User user;
+    private User user;
 
-    public MyInterceptor(User user) {
+    MyInterceptor(User user) {
         this.user = user;
     }
 

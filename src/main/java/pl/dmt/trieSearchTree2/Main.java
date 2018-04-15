@@ -3,7 +3,8 @@ package pl.dmt.trieSearchTree2;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+
+    public static void main(String... args) {
         final Trie prefixTree = new Trie();
 
         prefixTree.insert("GOING");
@@ -35,7 +36,7 @@ class Trie {
     private String curPrefix;
 
     // Inserts a word into the trie.
-    public void insert(final String word) {
+    void insert(final String word) {
         Map<Character, TrieNode> children = root.getChildren();
 
         TrieNode crntparent;
@@ -73,11 +74,11 @@ class Trie {
 
     // Returns if there is any word in the trie
     // that starts with the given prefix.
-    public boolean startsWith(final String prefix) {
+    boolean startsWith(final String prefix) {
         return searchNode(prefix) != null;
     }
 
-    public TrieNode searchNode(final String str) {
+    TrieNode searchNode(final String str) {
         Map<Character, TrieNode> children = root.getChildren();
         TrieNode t = null;
         for (int i = 0; i < str.length(); i++) {
@@ -96,7 +97,7 @@ class Trie {
         return t;
     }
 
-    public void wordsFinderTraversal(final TrieNode node, int offset) {
+    void wordsFinderTraversal(final TrieNode node, int offset) {
         //System.out.print(node, offset);
 
         if (node.isLeaf()) {
@@ -141,7 +142,7 @@ class Trie {
         }
     }
 
-    public void displayFoundWords() {
+    void displayFoundWords() {
         System.out.println("_______________");
         words.forEach(System.out::println);
         System.out.println("_______________");
@@ -155,34 +156,34 @@ class TrieNode {
     private Map<Character, TrieNode> children = new HashMap<>();
     private boolean isLeaf;
 
-    public TrieNode() {
+    TrieNode() {
     }
 
-    public TrieNode(Character c) {
+    TrieNode(Character c) {
         this.c = c;
     }
 
-    public Map<Character, TrieNode> getChildren() {
+    Map<Character, TrieNode> getChildren() {
         return children;
     }
 
-    public Character getC() {
+    Character getC() {
         return c;
     }
 
-    public TrieNode getParent() {
+    TrieNode getParent() {
         return parent;
     }
 
-    public void setParent(TrieNode parent) {
+    void setParent(TrieNode parent) {
         this.parent = parent;
     }
 
-    public boolean isLeaf() {
+    boolean isLeaf() {
         return isLeaf;
     }
 
-    public void setLeaf(boolean leaf) {
+    void setLeaf(boolean leaf) {
         isLeaf = leaf;
     }
 }
