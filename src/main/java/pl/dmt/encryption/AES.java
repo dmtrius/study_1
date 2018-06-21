@@ -26,7 +26,6 @@ public class AES {
         final SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
         final IvParameterSpec ivSpec = new IvParameterSpec(ivBytes);
         byte[] transformedBytes = null;
-
         try {
             final Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding");
 
