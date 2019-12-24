@@ -8,7 +8,7 @@ public class Main6 {
 
     public static void main(String[] args) {
 
-        Aa aa = new Aa();
+        Aa aa = new Aa("a");
         System.out.println(aa);
 
         System.out.println("--------------");
