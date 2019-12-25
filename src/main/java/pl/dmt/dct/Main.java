@@ -25,7 +25,10 @@ public class Main {
         System.out.println("From f to F");
         System.out.println("-----------");
 
-        for (int i = 0; i < 2; i++) {
+        printMatrix(f);
+        printMatrix(F);
+
+        /*for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
 
                 try {
@@ -36,7 +39,23 @@ public class Main {
 
             }
             System.out.println(" ");
+        }*/
+    }
+
+    public static void printMatrix(double[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        StringBuilder s = new StringBuilder();
+
+        for (double[] doubles : matrix) {
+            for (int col = 0; col < cols; col++) {
+                s.append(doubles[col]).append("\t");
+            }
+
+            s.append("\n");
         }
 
+        System.out.println(s);
     }
 }
