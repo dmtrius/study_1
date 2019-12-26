@@ -4,6 +4,7 @@ import java.lang.invoke.CallSite;
 import java.lang.invoke.LambdaMetafactory;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -21,8 +22,16 @@ public class Main {
                 .collect(Collectors.toList());*/
 
         /*List<URL> list = Stream.of("http://localhost/", "https://dzone.com")
-                .map(url -> callUnchecked(() -> new URL(url)))
-                .collect(Collectors.toList());*/
+                .map(url -> {
+                    try {
+                        return callUnchecked(() -> new URL(url));
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                    }
+                    return null;
+                })
+                .collect(Collectors.toList());
+        System.out.println(list);*/
     }
 
     public static <V> V callUnchecked(final Callable<V> callable) throws Throwable /*no throws*/ {

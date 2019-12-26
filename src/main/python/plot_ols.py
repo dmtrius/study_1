@@ -18,7 +18,6 @@ calculated.
 """
 print(__doc__)
 
-
 # Code source: Jaques Grobler
 # License: BSD 3 clause
 
@@ -30,7 +29,6 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Load the diabetes dataset
 diabetes = datasets.load_diabetes()
-
 
 # Use only one feature
 diabetes_X = diabetes.data[:, np.newaxis, 2]
@@ -61,7 +59,7 @@ print("Mean squared error: %.2f"
 print('Variance score: %.2f' % r2_score(diabetes_y_test, diabetes_y_pred))
 
 # Plot outputs
-plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
+plt.scatter(diabetes_X_test, diabetes_y_test, color='black')
 plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
 
 plt.xticks(())

@@ -10,9 +10,13 @@ public class Main {
                 .stream()
                 .filter((e) -> !e.contains("E"))
                 .collect(Collectors.toList());
-        list.forEach((e) -> System.out.println("We grabbed: " + e));*/
+        list.forEach((e) -> System.out.println("We grabbed: " + e));
+
         int i = 5;
         i = ++i + ++i;
-        System.out.println(i);
+        System.out.println(i);*/
+
+        List<String> list = Arrays.asList("RED", "WHITE", "PINK", "BLUE", "GOLD");
+        list.forEach(System.out::println);
     }
 }
