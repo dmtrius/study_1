@@ -5,7 +5,7 @@ object LongestCommonSubsequence {
     println("Hello, world!!!")
   }
 
-  def lcsLazy[T](u: IndexedSeq[T], v: IndexedSeq[T]): IndexedSeq[T] = {
+  /*def lcsLazy[T](u: IndexedSeq[T], v: IndexedSeq[T]): IndexedSeq[T] = {
     def su = subsets(u).to(LazyList)
 
     def sv = subsets(v).to(LazyList)
@@ -26,5 +26,5 @@ object LongestCommonSubsequence {
     case (a +: as, b +: bs) =>
       val (s1, s2) = (lcsRec(a +: as, bs), lcsRec(as, b +: bs))
       if (s1.length > s2.length) s1 else s2
-  }
+  }*/
 }
