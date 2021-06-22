@@ -16,7 +16,8 @@ import static java.util.stream.Collectors.toCollection;
 
 public class Main3 {
     public static void main(String... args) throws Exception {
-        demoSerCeExample();
+        //System.out.print("Java\n".repeat(10));
+        //demoSerCeExample();
 
         String s = "\u00a0";
         // trim all whitespaces + unicode ones
